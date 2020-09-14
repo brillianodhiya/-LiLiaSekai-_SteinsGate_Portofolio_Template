@@ -171,7 +171,7 @@ const App = () => {
               UP
             </div>
           </BackTop>
-          <section ref={homeView} id="Home" style={{ height: "100vh" }}>
+          <section ref={homeView} id="Home" style={{ height: "120vh" }}>
             <Home />
           </section>
           <section ref={contactView} id="About" style={{ height: "120vh" }}>

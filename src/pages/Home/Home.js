@@ -1,7 +1,7 @@
 import React from "react";
 import Particle from "../../components/Particle";
 import { Card, Typography } from "antd";
-import "./Home.css";
+import "./Home.less";
 
 const Home = () => {
   return (
