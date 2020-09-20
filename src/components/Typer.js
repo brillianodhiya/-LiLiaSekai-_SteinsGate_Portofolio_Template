@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
+import { Typography } from "antd";
 
 const CONSTANTS = {
-  DELETING_SPEED: 30,
+  DELETING_SPEED: 60,
   TYPING_SPEED: 150,
 };
 
-function TypeWriter({ messages, heading }) {
+function TypeWriter({
+  messages = ["Text1", "Text 2", "Text 3"],
+  heading,
+  level = 3,
+  headingColor,
+  messagesColor,
+}) {
   const [state, setState] = useState({
     text: "",
     message: "",
@@ -63,11 +70,11 @@ function TypeWriter({ messages, heading }) {
   }
 
   return (
-    <h1>
+    <Typography.Title level={level} style={{ color: headingColor }}>
       {heading}&nbsp;
-      <span>{state.text}</span>
-      <span id="cursor" />
-    </h1>
+      <span style={{ color: messagesColor }}>{state.text}</span>
+      <span style={{ color: messagesColor }} id="cursor" />
+    </Typography.Title>
   );
 }
 

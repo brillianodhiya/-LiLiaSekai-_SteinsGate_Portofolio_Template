@@ -17,54 +17,52 @@ import TimelineMe from "./pages/Timeline/Timeline";
 import About from "./pages/About/About";
 import { useInView } from "react-hook-inview";
 import Contact from "./pages/Contact/Contact";
+import Particle from "./components/Particle";
 
 const { Header, Content, Footer, Sider } = Layout;
 
 const App = () => {
+  // state
   const [breakPointPosition, setBreakPointPosition] = React.useState(false);
   const [menu, setMenu] = React.useState(["Home"]);
 
+  // view visible content
   const [homeView, isHomeView] = useInView();
+  const [aboutView, isAboutView] = useInView();
+  const [skillView, isSkillView] = useInView();
+  const [portofolioView, isPortofolioView] = useInView();
+  const [timelineView, isTimelineView] = useInView();
+  const [contactView, isContactVisible] = useInView();
+
+  // change vuew menu's
   React.useEffect(() => {
     if (isHomeView) {
       setMenu(["Home"]);
     }
-  }, [isHomeView]);
-
-  const [aboutView, isAboutView] = useInView();
-  React.useEffect(() => {
     if (isAboutView) {
       setMenu(["About"]);
     }
-  }, [isAboutView]);
-
-  const [skillView, isSkillView] = useInView();
-  React.useEffect(() => {
     if (isSkillView) {
       setMenu(["Skill"]);
     }
-  }, [isSkillView]);
-
-  const [portofolioView, isPortofolioView] = useInView();
-  React.useEffect(() => {
     if (isPortofolioView) {
       setMenu("Portofolio");
     }
-  }, [isPortofolioView]);
 
-  const [timelineView, isTimelineView] = useInView();
-  React.useEffect(() => {
     if (isTimelineView) {
       setMenu("Timeline");
     }
-  }, [isTimelineView]);
-
-  const [contactView, isContactVisible] = useInView();
-  React.useEffect(() => {
     if (isContactVisible) {
       setMenu(["Contact"]);
     }
-  }, [isContactVisible]);
+  }, [
+    isHomeView,
+    isAboutView,
+    isSkillView,
+    isPortofolioView,
+    isTimelineView,
+    isContactVisible,
+  ]);
 
   return (
     <Layout>
@@ -174,8 +172,14 @@ const App = () => {
           <section ref={homeView} id="Home" style={{ height: "120vh" }}>
             <Home />
           </section>
-          <section ref={contactView} id="About" style={{ height: "120vh" }}>
-            <About />
+          <section
+            ref={aboutView}
+            id="About"
+            style={
+              breakPointPosition ? {} : { height: "120vh", overflow: "hidden" }
+            }
+          >
+            <About isBreakPosition={breakPointPosition} />
           </section>
           <section ref={skillView} id="Skill" style={{ height: "120vh" }}>
             <Skill />
