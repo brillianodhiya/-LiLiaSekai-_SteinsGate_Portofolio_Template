@@ -11,6 +11,8 @@ import {
   Space,
   Button,
 } from "antd";
+import ImageMe from "../../assets/1600712755227.png";
+import Gear from "../../assets/gear.png";
 
 const About = ({ isBreakPosition }) => {
   return (
@@ -20,6 +22,9 @@ const About = ({ isBreakPosition }) => {
         title="About Me"
         desciption="Main Information About Me"
       />
+      {!isBreakPosition && (
+        <img style={{ right: 0, position: "absolute" }} src={Gear} />
+      )}
       <Row>
         <Col style={{ marginTop: "10vmin" }} span={isBreakPosition ? 24 : 12}>
           <Typer
@@ -89,10 +94,10 @@ const About = ({ isBreakPosition }) => {
             borderBottom: "3px solid",
           }}
         >
-          <Image
-            width={362}
-            src="https://pm1.narvii.com/6460/125a2f99d03a7862350a07ecd0cc362713b086e6_00.jpg"
-          />
+          {isBreakPosition && (
+            <img style={{ right: 0, position: "absolute" }} src={Gear} />
+          )}
+          <Image width={362} src={ImageMe} />
         </Col>
         {isBreakPosition && (
           <Col span={24} style={{ marginTop: "5vmin" }}>

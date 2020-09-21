@@ -182,7 +182,7 @@ const App = () => {
             <About isBreakPosition={breakPointPosition} />
           </section>
           <section ref={skillView} id="Skill" style={{ height: "120vh" }}>
-            <Skill />
+            <Skill isBreakPosition={breakPointPosition} />
           </section>
           <section
             ref={portofolioView}
