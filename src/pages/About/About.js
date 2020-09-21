@@ -7,11 +7,10 @@ import {
   Typography,
   Descriptions,
   Image,
-  Divider,
+  //   Divider,
   Space,
   Button,
 } from "antd";
-import Particle from "../../components/Particle";
 
 const About = ({ isBreakPosition }) => {
   return (
@@ -44,7 +43,10 @@ const About = ({ isBreakPosition }) => {
             myself and my team to develop a time machine. I also continue to
             open services for creating web and android based applications.
           </Typography.Paragraph>
-          <Descriptions title="More Information About me ?" column={2}>
+          <Descriptions
+            title="More Information About me ?"
+            column={isBreakPosition ? 1 : 2}
+          >
             <Descriptions.Item label={<b>Birthday</b>}>
               December 14th, 1991
             </Descriptions.Item>
