@@ -2,9 +2,10 @@ import React from "react";
 import Particles from "react-particles-js";
 
 const Particle = () => {
+  //   console.log(window.outerHeight, "OUTERHEIGHT");
   return (
     <Particles
-      height={window.outerHeight}
+      height={window.outerHeight + 50}
       params={{
         particles: {
           color: "#E3872D",
