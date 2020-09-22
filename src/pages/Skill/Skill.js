@@ -85,7 +85,7 @@ const Skill = ({ isBreakPosition }) => {
           </Typography.Paragraph>
         </Col>
         <Col span={24}>
-          <Bullet {...config} />
+          <Bullet {...config} style={{ position: "relative" }} />
         </Col>
       </Row>
     </div>

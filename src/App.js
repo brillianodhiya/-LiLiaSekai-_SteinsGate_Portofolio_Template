@@ -9,7 +9,6 @@ import {
   BackTop,
 } from "antd";
 import "./App.less";
-import TypeWriter from "./components/Typer";
 import Home from "./pages/Home/Home";
 import Skill from "./pages/Skill/Skill";
 import Portofolio from "./pages/Portofolio/Portofolio";
@@ -17,9 +16,8 @@ import TimelineMe from "./pages/Timeline/Timeline";
 import About from "./pages/About/About";
 import { useInView } from "react-hook-inview";
 import Contact from "./pages/Contact/Contact";
-import Particle from "./components/Particle";
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Content, Footer, Sider } = Layout;
 
 const App = () => {
   // state

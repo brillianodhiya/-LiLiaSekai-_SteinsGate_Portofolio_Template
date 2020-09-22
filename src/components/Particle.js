@@ -6,6 +6,7 @@ const Particle = () => {
   return (
     <Particles
       height={window.outerHeight + 50}
+      width={window.outerWidth}
       params={{
         particles: {
           color: "#E3872D",
