@@ -14,7 +14,7 @@ const Skill = ({ isBreakPosition }) => {
       },
       {
         title: "Node Js",
-        measures: [13],
+        measures: [87],
         targets: [100],
       },
       {
@@ -23,18 +23,44 @@ const Skill = ({ isBreakPosition }) => {
         targets: [100],
       },
       {
-        title: "Dart",
-        measures: [83],
-        targets: [100],
-      },
-      {
         title: "Java",
         measures: [72],
         targets: [100],
       },
+      {
+        title: "Photoshop",
+        measures: [75],
+        targets: [100],
+      },
+      {
+        title: "Marvel App",
+        measures: [56],
+        targets: [100],
+      },
     ],
     rangeMax: 100,
-    color: "#E3872D",
+    color: ["#E3872D"],
+    rangeColors: ["#E3872D"],
+    markerColors: ["#E3872D"],
+    measureColors: ["#E3872D"],
+    forceFit: true,
+    animation: true,
+    label: {
+      formatter: (text) => text + "%",
+      style: {
+        fontSize: 12,
+        fontWeight: "bolder",
+      },
+    },
+    xAxis: {
+      visible: true,
+      label: {
+        style: {
+          fontSize: 14,
+          //   fontWeight: "bold",
+        },
+      },
+    },
   };
 
   return (
