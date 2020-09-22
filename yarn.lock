@@ -229,9 +229,9 @@
     tslib "^2.0.0"
 
 "@antv/g2plot@^1.1.24":
-  version "1.1.27"
-  resolved "https://registry.yarnpkg.com/@antv/g2plot/-/g2plot-1.1.27.tgz#e6ea0495e2c2c880ed7deb3def01e3a44c8de213"
-  integrity sha512-xWScVZsvAGgIsjBAzTQlDsAVFyQBMxk0fhW/V/c4/U8lcnBsHdpEgT1MXNkOZvgpSHfZsPlr+zu/F+2zqkdDyQ==
+  version "1.1.28"
+  resolved "https://registry.yarnpkg.com/@antv/g2plot/-/g2plot-1.1.28.tgz#6d5df145aa49a17e0f0edc55052be054bea63216"
+  integrity sha512-A/+yuuUM6KPOXk95Hqo8RJqu/dGXFvBB/YlAg8i80AQ56MNLb9TEwGByADpVicta5VeH6h3k36m4xdePIWADIg==
   dependencies:
     "@antv/component" "~0.6.1"
     "@antv/coord" "~0.3.0"

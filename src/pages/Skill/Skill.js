@@ -2,22 +2,39 @@ import React from "react";
 import Header from "../../components/Header";
 import { Row, Col, Typography, Image } from "antd";
 import Gear from "../../assets/gear.png";
-import { Gauge } from "@ant-design/charts";
+import { Bullet } from "@ant-design/charts";
 
 const Skill = ({ isBreakPosition }) => {
   const config = {
-    title: {
-      visible: false,
-      text: "扇形仪表盘",
-    },
-    value: 34,
-    min: 0,
-    max: 100,
-    range: [0, 70],
-    format: (v) => {
-      return v + "%";
-    },
-    color: ["l(0) 0:#ddc0a3 1:#E3872D"],
+    data: [
+      {
+        title: "Javascript",
+        measures: [83],
+        targets: [100],
+      },
+      {
+        title: "Node Js",
+        measures: [13],
+        targets: [100],
+      },
+      {
+        title: "Flutter",
+        measures: [45],
+        targets: [100],
+      },
+      {
+        title: "Dart",
+        measures: [83],
+        targets: [100],
+      },
+      {
+        title: "Java",
+        measures: [72],
+        targets: [100],
+      },
+    ],
+    rangeMax: 100,
+    color: "#E3872D",
   };
 
   return (
@@ -30,8 +47,10 @@ const Skill = ({ isBreakPosition }) => {
       />
       <img style={{ right: 0, position: "absolute" }} src={Gear} />
       <Row>
-        <Col span={isBreakPosition ? 24 : 12} style={{ marginTop: "8vmin" }}>
-          <Typography.Paragraph>
+        <Col span={24} style={{ marginTop: "8vmin" }}>
+          <Typography.Paragraph
+            style={{ width: isBreakPosition ? "100%" : "50%" }}
+          >
             Dolore adipisicing excepteur proident qui ut minim voluptate ipsum
             ad laborum. Dolor irure tempor minim et et Lorem officia quis
             deserunt. Aliquip tempor voluptate ea occaecat officia amet cillum
@@ -39,7 +58,9 @@ const Skill = ({ isBreakPosition }) => {
             voluptate voluptate.
           </Typography.Paragraph>
         </Col>
-        <Col span={isBreakPosition ? 12 : 6}>{/* <Gauge {...config} /> */}</Col>
+        <Col span={24}>
+          <Bullet {...config} />
+        </Col>
       </Row>
     </div>
   );
