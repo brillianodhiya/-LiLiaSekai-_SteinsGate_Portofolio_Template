@@ -39,7 +39,9 @@ const Skill = ({ isBreakPosition }) => {
             voluptate voluptate.
           </Typography.Paragraph>
         </Col>
-        <Col span={isBreakPosition ? 12 : 6}>{/* <Gauge {...config} /> */}</Col>
+        <Col span={isBreakPosition ? 12 : 6}>
+          <Gauge {...config} />
+        </Col>
       </Row>
     </div>
   );
