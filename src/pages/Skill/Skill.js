@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../components/Header";
-import { Row, Col, Typography, Image } from "antd";
+import { Row, Col, Typography } from "antd";
 import Gear from "../../assets/gear.png";
 import { Bullet } from "@ant-design/charts";
 
@@ -64,7 +64,7 @@ const Skill = ({ isBreakPosition }) => {
   };
 
   return (
-    <div style={{ margin: "24px" }}>
+    <div style={{ margin: "24px", paddingTop: "24px" }}>
       <Header
         width={isBreakPosition ? 12 : 8}
         title="Some About my Skill"
@@ -81,7 +81,7 @@ const Skill = ({ isBreakPosition }) => {
             ad laborum. Dolor irure tempor minim et et Lorem officia quis
             deserunt. Aliquip tempor voluptate ea occaecat officia amet cillum
             ullamco eiusmod consequat tempor eu. Consectetur tempor sint aliquip
-            voluptate voluptate.
+            voluptate voluptate. El psy congroo.
           </Typography.Paragraph>
         </Col>
         <Col span={24}>

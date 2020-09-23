@@ -1,6 +1,5 @@
 import React from "react";
 import Particle from "../../components/Particle";
-import { Card, Typography } from "antd";
 import "./Home.less";
 
 const Home = () => {

@@ -182,12 +182,8 @@ const App = () => {
           <section ref={skillView} id="Skill">
             <Skill isBreakPosition={breakPointPosition} />
           </section>
-          <section
-            ref={portofolioView}
-            id="Portofolio"
-            style={{ height: "120vh" }}
-          >
-            <Portofolio />
+          <section ref={portofolioView} id="Portofolio">
+            <Portofolio isBreakPosition={breakPointPosition} />
           </section>
           <section ref={timelineView} id="Timeline" style={{ height: "120vh" }}>
             <TimelineMe />
