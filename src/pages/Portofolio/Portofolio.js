@@ -31,7 +31,9 @@ const Portofolio = ({ isBreakPosition }) => {
   return (
     <div style={{ margin: "24px", paddingTop: "24px", paddingBottom: "32px" }}>
       <img style={{ right: 0, position: "absolute" }} src={Gear} />
-      <img style={{ left: 50, position: "absolute" }} src={GearReverse} />
+      {!isBreakPosition && (
+        <img style={{ left: 50, position: "absolute" }} src={GearReverse} />
+      )}
       <Header
         width={isBreakPosition ? 16 : 8}
         title="Mostly the Result of My Work"
