@@ -33,6 +33,7 @@ function TypeWriter({
     };
     handleType();
     return () => clearTimeout(timer);
+    // eslint-disable-next-line
   }, [state.isDeleting]);
 
   useEffect(() => {

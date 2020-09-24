@@ -37,6 +37,16 @@ const Skill = ({ isBreakPosition }) => {
         measures: [56],
         targets: [100],
       },
+      {
+        title: "After Effect",
+        measures: [77],
+        targets: [100],
+      },
+      {
+        title: "Php",
+        measures: [98],
+        targets: [100],
+      },
     ],
     rangeMax: 100,
     color: ["#E3872D"],
@@ -64,14 +74,18 @@ const Skill = ({ isBreakPosition }) => {
   };
 
   return (
-    <div style={{ margin: "24px", paddingTop: "24px" }}>
+    <div style={{ margin: "24px" }}>
       <Header
         width={isBreakPosition ? 12 : 8}
         title="Some About my Skill"
         desciption="More info about my skill"
         // withDesc
       />
-      <img style={{ right: 0, position: "absolute" }} src={Gear} />
+      <img
+        alt="Gear Background"
+        style={{ right: 0, position: "absolute" }}
+        src={Gear}
+      />
       <Row>
         <Col span={24} style={{ marginTop: "8vmin" }}>
           <Typography.Paragraph

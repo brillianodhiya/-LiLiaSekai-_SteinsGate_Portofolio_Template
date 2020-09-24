@@ -24,6 +24,8 @@ const App = () => {
   const [breakPointPosition, setBreakPointPosition] = React.useState(false);
   const [menu, setMenu] = React.useState(["Home"]);
 
+  const [count, setCount] = React.useState(0);
+
   // view visible content
   const [homeView, isHomeView] = useInView();
   const [aboutView, isAboutView] = useInView();
@@ -34,24 +36,68 @@ const App = () => {
 
   // change vuew menu's
   React.useEffect(() => {
-    if (isHomeView) {
-      setMenu(["Home"]);
-    }
-    if (isAboutView) {
-      setMenu(["About"]);
-    }
-    if (isSkillView) {
-      setMenu(["Skill"]);
-    }
-    if (isPortofolioView) {
-      setMenu("Portofolio");
-    }
+    if (count > 0) {
+      if (isHomeView) {
+        setMenu(["Home"]);
+      }
+      if (isAboutView) {
+        setMenu(["About"]);
+      }
+      if (isSkillView) {
+        setMenu(["Skill"]);
+      }
+      if (isPortofolioView) {
+        setMenu("Portofolio");
+      }
+      if (isTimelineView) {
+        setMenu("Timeline");
+      }
+      if (isContactVisible) {
+        setMenu(["Contact"]);
+      }
+    } else {
+      let section = "Home";
+      let view = isHomeView;
+      switch (window.location.hash) {
+        case "#Home":
+          section = "Home";
+          view = isHomeView;
+          break;
 
-    if (isTimelineView) {
-      setMenu("Timeline");
-    }
-    if (isContactVisible) {
-      setMenu(["Contact"]);
+        case "#About":
+          section = "About";
+          view = isAboutView;
+          break;
+
+        case "#Skill":
+          section = "Skill";
+          view = isSkillView;
+          break;
+
+        case "#Portofolio":
+          section = "Portofolio";
+          view = isPortofolioView;
+          break;
+
+        case "#Timeline":
+          section = "Timeline";
+          view = isTimelineView;
+          break;
+
+        case "#Contact":
+          section = "Home";
+          view = isContactVisible;
+          break;
+
+        default:
+          section = "Home";
+          view = isHomeView;
+          break;
+      }
+      if (view) {
+        setMenu([section]);
+        setCount(1);
+      }
     }
   }, [
     isHomeView,
@@ -60,6 +106,7 @@ const App = () => {
     isPortofolioView,
     isTimelineView,
     isContactVisible,
+    count,
   ]);
 
   return (
@@ -91,7 +138,7 @@ const App = () => {
         </Badge.Ribbon>
         <Divider />
         <Menu
-          onSelect={(info) => setMenu([info.key])}
+          onSelect={(info) => setCount(0)}
           selectedKeys={menu}
           style={{ maxHeight: "55vh", overflow: "auto" }}
         >
@@ -185,11 +232,11 @@ const App = () => {
           <section ref={portofolioView} id="Portofolio">
             <Portofolio isBreakPosition={breakPointPosition} />
           </section>
-          <section ref={timelineView} id="Timeline" style={{ height: "120vh" }}>
-            <TimelineMe />
+          <section ref={timelineView} id="Timeline">
+            <TimelineMe isBreakPosition={breakPointPosition} />
           </section>
-          <section ref={contactView} id="Contact" style={{ height: "120vh" }}>
-            <Contact />
+          <section ref={contactView} id="Contact">
+            <Contact isBreakPosition={breakPointPosition} />
           </section>
         </Content>
         <Footer
@@ -200,9 +247,10 @@ const App = () => {
             color: "#E3872D",
             // textShadow: "0 0 3px #E3872D, 0 0 5px #E3872D",
             fontWeight: "bold",
+            zIndex: 1,
           }}
         >
-          Copyright © 2020 Created by LiLia Sekai
+          Copyright © 2020 Created by LiLia Sekai Corp.
         </Footer>
       </Layout>
     </Layout>

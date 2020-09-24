@@ -23,7 +23,11 @@ const About = ({ isBreakPosition }) => {
         desciption="Main Information About Me"
       />
       {!isBreakPosition && (
-        <img style={{ right: 0, position: "absolute" }} src={Gear} />
+        <img
+          alt="gear-background"
+          style={{ right: 0, position: "absolute" }}
+          src={Gear}
+        />
       )}
       <Row>
         <Col style={{ marginTop: "10vmin" }} span={isBreakPosition ? 24 : 12}>
@@ -95,7 +99,11 @@ const About = ({ isBreakPosition }) => {
           }}
         >
           {isBreakPosition && (
-            <img style={{ right: 0, position: "absolute" }} src={Gear} />
+            <img
+              alt="gear-background"
+              style={{ right: 0, position: "absolute" }}
+              src={Gear}
+            />
           )}
           <Image width={362} src={ImageMe} />
         </Col>

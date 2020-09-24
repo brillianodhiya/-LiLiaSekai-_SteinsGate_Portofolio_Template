@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../components/Header";
-import { List, Space } from "antd";
+import { List, Space, Image } from "antd";
 import Gear from "../../assets/gear.png";
 import GearReverse from "../../assets/gear-reverse.png";
 import { StarOutlined, ForkOutlined } from "@ant-design/icons";
@@ -11,7 +11,7 @@ for (let i = 1; i < 18; i++) {
     href: "https://github.com/",
     title: `Project ${i}`,
     description:
-      "Ea incididunt laboris consectetur exercitation consequat anim eiusmod sit eu pariatur exercitation eiusmod. Do dolore irure aliqua quis eiusmod.",
+      "Ea incididunt laboris consectetur exercitation consequat anim eiusmod sit eu pariatur exercitation eiusmod.",
     content:
       "Aliqua labore dolore Lorem elit nostrud adipisicing anim veniam aliqua sit Lorem magna. Occaecat aliqua irure consectetur nisi voluptate fugiat sunt excepteur laboris exercitation. Amet minim in occaecat labore dolore pariatur exercitation proident.",
     star: Math.floor(Math.random() * 1000) + 1,
@@ -29,10 +29,18 @@ const IconText = ({ icon, text }) => (
 
 const Portofolio = ({ isBreakPosition }) => {
   return (
-    <div style={{ margin: "24px", paddingTop: "24px", paddingBottom: "32px" }}>
-      <img style={{ right: 0, position: "absolute" }} src={Gear} />
+    <div style={{ margin: "24px" }}>
+      <img
+        alt="gear-background"
+        style={{ right: 0, position: "absolute" }}
+        src={Gear}
+      />
       {!isBreakPosition && (
-        <img style={{ left: 50, position: "absolute" }} src={GearReverse} />
+        <img
+          alt="gear-background"
+          style={{ left: 50, position: "absolute" }}
+          src={GearReverse}
+        />
       )}
       <Header
         width={isBreakPosition ? 16 : 8}
@@ -67,7 +75,7 @@ const Portofolio = ({ isBreakPosition }) => {
                 key="list-vertical-like-o"
               />,
             ]}
-            extra={<img width={272} alt="Image" src={item.image} />}
+            extra={<Image width={272} alt="Image" src={item.image} />}
           >
             <List.Item.Meta
               title={<a href={item.href}>{item.title}</a>}
